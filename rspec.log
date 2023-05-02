@@ -61,8 +61,8 @@ Userモデルのテスト
 [32m      password_confirmationフォームが表示される[0m
 [32m      Sign upボタンが表示される[0m
     新規登録成功のテスト
-[31m      正しく新規登録される (FAILED - 1)[0m
-[31m      新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている (FAILED - 2)[0m
+[32m      正しく新規登録される[0m
+[32m      新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている[0m
   ユーザログイン
     表示内容の確認
 [32m      URLが正しい[0m
@@ -127,16 +127,16 @@ Userモデルのテスト
 [32m      titleフォームが表示される[0m
 [32m      titleフォームに値が入っていない[0m
 [32m      bodyフォームが表示される[0m
-[31m      bodyフォームに値が入っていない (FAILED - 3)[0m
-[31m      Create Bookボタンが表示される (FAILED - 4)[0m
+[31m      bodyフォームに値が入っていない (FAILED - 1)[0m
+[31m      Create Bookボタンが表示される (FAILED - 2)[0m
     投稿成功のテスト
-[31m      自分の新しい投稿が正しく保存される (FAILED - 5)[0m
+[31m      自分の新しい投稿が正しく保存される (FAILED - 3)[0m
     編集リンクのテスト
 [32m      編集画面に遷移する[0m
     削除リンクのテスト
-[31m      application.html.erbにjavascript_pack_tagを含んでいる (FAILED - 6)[0m
-[31m      正しく削除される (FAILED - 7)[0m
-[31m      リダイレクト先が、投稿一覧画面になっている (FAILED - 8)[0m
+[31m      application.html.erbにjavascript_pack_tagを含んでいる (FAILED - 4)[0m
+[31m      正しく削除される (FAILED - 5)[0m
+[31m      リダイレクト先が、投稿一覧画面になっている (FAILED - 6)[0m
   自分の投稿編集画面のテスト
     表示の確認
 [32m      URLが正しい[0m
@@ -195,23 +195,30 @@ Userモデルのテスト
 
 [STEP3] 仕上げのテスト
   サクセスメッセージのテスト
-[31m    ユーザ新規登録成功時 (FAILED - 9)[0m
+[32m    ユーザ新規登録成功時[0m
 [32m    ユーザログイン成功時[0m
 [32m    ユーザログアウト成功時[0m
 [32m    ユーザのプロフィール情報更新成功時[0m
 [32m    投稿データの新規投稿成功時: 投稿一覧画面から行います。[0m
-                                                                                                                                                                                                                                                                                                                                                                                                                       [32m      更新されない[0m
+[32m    投稿データの更新成功時[0m
+  処理失敗時のテスト
+    ユーザ新規登録失敗: nameを1文字にする
+[32m      新規登録されない[0m
+[32m      新規登録画面を表示しており、フォームの内容が正しい[0m
+[32m      バリデーションエラーが表示される[0m
+    ユーザのプロフィール情報編集失敗: nameを1文字にする
+[32m      更新されない[0m
 [32m      ユーザ編集画面を表示しており、フォームの内容が正しい[0m
 [32m      バリデーションエラーが表示される[0m
     投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする
 [32m      投稿が保存されない[0m
 [32m      投稿一覧画面を表示している[0m
 [32m      新規投稿フォームの内容が正しい[0m
-[31m      バリデーションエラーが表示される (FAILED - 10)[0m
+[31m      バリデーションエラーが表示される (FAILED - 7)[0m
     投稿データの更新失敗: titleを空にする
 [32m      投稿が更新されない[0m
 [32m      投稿編集画面を表示しており、フォームの内容が正しい[0m
-[31m      エラーメッセージが表示される (FAILED - 11)[0m
+[31m      エラーメッセージが表示される (FAILED - 8)[0m
   ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する
 [32m    ユーザ一覧画面[0m
 [32m    ユーザ詳細画面[0m
@@ -227,15 +234,15 @@ Userモデルのテスト
 [32m        ユーザ画像・名前のリンク先が正しい[0m
 [32m        投稿のtitleが表示される[0m
 [32m        投稿のopinionが表示される[0m
-[31m        投稿の編集リンクが表示されない (FAILED - 12)[0m
-[31m        投稿の削除リンクが表示されない (FAILED - 13)[0m
+[31m        投稿の編集リンクが表示されない (FAILED - 9)[0m
+[31m        投稿の削除リンクが表示されない (FAILED - 10)[0m
       サイドバーの確認
 [32m        他人の名前と紹介文が表示される[0m
 [32m        他人のユーザ編集画面へのリンクが存在する[0m
 [32m        自分の名前と紹介文は表示されない[0m
 [32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人の投稿編集画面
-[31m      遷移できず、投稿一覧画面にリダイレクトされる (FAILED - 14)[0m
+[31m      遷移できず、投稿一覧画面にリダイレクトされる (FAILED - 11)[0m
     他人のユーザ詳細画面のテスト
       表示の確認
 [32m        URLが正しい[0m
@@ -249,9 +256,9 @@ Userモデルのテスト
 [32m        自分の名前と紹介文は表示されない[0m
 [32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人のユーザ情報編集画面
-[31m      遷移できず、自分のユーザ詳細画面にリダイレクトされる (FAILED - 15)[0m
+[31m      遷移できず、自分のユーザ詳細画面にリダイレクトされる (FAILED - 12)[0m
   グリッドシステムのテスト: container, row, col-md-〇を正しく使えている
-[31m    ユーザ一覧画面 (FAILED - 16)[0m
+[31m    ユーザ一覧画面 (FAILED - 13)[0m
 [32m    ユーザ詳細画面[0m
 [32m    投稿一覧画面[0m
 [32m    投稿詳細画面[0m
@@ -278,32 +285,17 @@ Userモデルのテスト
 
 Failures:
 
-  1) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 正しく新規登録される
-     [31mFailure/Error: expect { click_button 'Sign up' }.to change(User.all, :count).by(1)[0m
-     [31m  expected `User::ActiveRecord_Relation#count` to have changed by 1, but was changed by 0[0m
-     [36m# ./spec/system/01_before_login_spec.rb:148:in `block (4 levels) in <main>'[0m
-
-  2) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている
-     [31mFailure/Error: expect(current_path).to eq '/users/' + User.last.id.to_s[0m
-     [31m[0m
-     [31mNoMethodError:[0m
-     [31m  undefined method `id' for nil:NilClass[0m
-     [31m[0m
-     [31m          expect(current_path).to eq '/users/' + User.last.id.to_s[0m
-     [31m                                                          ^^^[0m
-     [36m# ./spec/system/01_before_login_spec.rb:152:in `block (4 levels) in <main>'[0m
-
-  3) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない
+  1) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない
      [31mFailure/Error: expect(find_field('book[body]').text).to be_blank[0m
-     [31m  expected `"twwuy6ivn1sxptg3mjz0".blank?` to be truthy, got false[0m
+     [31m  expected `"gci4qwttquvr2r8b1bj4".blank?` to be truthy, got false[0m
      [36m# ./spec/system/02_after_login_spec.rb:158:in `block (4 levels) in <main>'[0m
 
-  4) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される
+  2) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される
      [31mFailure/Error: expect(page).to have_button 'Create Book'[0m
      [31m  expected to find button "Create Book" that is not disabled but there were no matches[0m
      [36m# ./spec/system/02_after_login_spec.rb:161:in `block (4 levels) in <main>'[0m
 
-  5) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+  3) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
      [31mFailure/Error: expect { click_button 'Create Book' }.to change(user.books, :count).by(1)[0m
      [31m[0m
      [31mCapybara::ElementNotFound:[0m
@@ -319,7 +311,7 @@ Failures:
      [36m# ./spec/system/02_after_login_spec.rb:172:in `block (5 levels) in <main>'[0m
      [36m# ./spec/system/02_after_login_spec.rb:172:in `block (4 levels) in <main>'[0m
 
-  6) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト application.html.erbにjavascript_pack_tagを含んでいる
+  4) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト application.html.erbにjavascript_pack_tagを含んでいる
      [31mFailure/Error: click_link 'Destroy'[0m
      [31m[0m
      [31mAbstractController::ActionNotFound:[0m
@@ -369,7 +361,7 @@ Failures:
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.37.1/lib/capybara/dsl.rb:52:in `click_link'[0m
      [36m# ./spec/system/02_after_login_spec.rb:196:in `block (4 levels) in <main>'[0m
 
-  7) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される
+  5) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される
      [31mFailure/Error: click_link 'Destroy'[0m
      [31m[0m
      [31mAbstractController::ActionNotFound:[0m
@@ -419,7 +411,7 @@ Failures:
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.37.1/lib/capybara/dsl.rb:52:in `click_link'[0m
      [36m# ./spec/system/02_after_login_spec.rb:196:in `block (4 levels) in <main>'[0m
 
-  8) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている
+  6) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている
      [31mFailure/Error: click_link 'Destroy'[0m
      [31m[0m
      [31mAbstractController::ActionNotFound:[0m
@@ -469,32 +461,27 @@ Failures:
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.37.1/lib/capybara/dsl.rb:52:in `click_link'[0m
      [36m# ./spec/system/02_after_login_spec.rb:196:in `block (4 levels) in <main>'[0m
 
-  9) [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザ新規登録成功時
-     [31mFailure/Error: is_expected.to have_content 'successfully'[0m
-     [31m  expected to find text "successfully" in "Bookers\nHome About Sign up Log in\nSign up\n1 error prohibited this user from being saved:\nIntroduction can't be blank\nName\nEmail\nPassword (6 characters minimum)\nPassword confirmation\nLog in\nCopyRight Infratop.inc"[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:19:in `block (3 levels) in <main>'[0m
+  7) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される
+     [31mFailure/Error: expect(page).to have_content "can't be blank"[0m
+     [31m  expected to find text "can't be blank" in "Bookers\nHome Users Books Log out\nUser info\nname p83iofqa36 introduction 3sw1xaglr0sdfgx1gm8m\n　\nNew book\nTitle\nOpinion o412nnpl86m1jkpe69s\nBooks\nTitle Opinion srmc5 rgxbi9yodg5fualg1gsr nymys 21f5635bx53wnmo40tw7\nCopyRight Infratop.inc"[0m
+     [36m# ./spec/system/03_finishing_touches_spec.rb:146:in `block (4 levels) in <main>'[0m
 
-  10) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される
-      [31mFailure/Error: expect(page).to have_content "can't be blank"[0m
-      [31m  expected to find text "can't be blank" in "Bookers\nHome Users Books Log out\nUser info\nname 5q4furjbql introduction 1kytqnjggxw51svsd69d\n　\nNew book\nTitle\nOpinion j0fyqc0ruu15wazagsy\nBooks\nTitle Opinion y7d08 3o7q7303457v8rdl8mcu kp8bq 1uvz94qwnlemk4bsrats\nCopyRight Infratop.inc"[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:146:in `block (4 levels) in <main>'[0m
+  8) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される
+     [31mFailure/Error: expect(page).to have_content 'error'[0m
+     [31m  expected to find text "error" in "Bookers\nHome Users Books Log out\nEditing Book\nTitle\nOpinion 97505psrsgnz9k8a01za\nShow | Back\nCopyRight Infratop.inc"[0m
+     [36m# ./spec/system/03_finishing_touches_spec.rb:171:in `block (4 levels) in <main>'[0m
 
-  11) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される
-      [31mFailure/Error: expect(page).to have_content 'error'[0m
-      [31m  expected to find text "error" in "Bookers\nHome Users Books Log out\nEditing Book\nTitle\nOpinion 4nq5gk6j4qqmbyt6a96r\nShow | Back\nCopyRight Infratop.inc"[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:171:in `block (4 levels) in <main>'[0m
+  9) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない
+     [31mFailure/Error: expect(page).not_to have_link 'Edit'[0m
+     [31m  expected not to find visible link "Edit", found 1 match: "Edit"[0m
+     [36m# ./spec/system/03_finishing_touches_spec.rb:235:in `block (5 levels) in <main>'[0m
 
-  12) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない
-      [31mFailure/Error: expect(page).not_to have_link 'Edit'[0m
-      [31m  expected not to find visible link "Edit", found 1 match: "Edit"[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:235:in `block (5 levels) in <main>'[0m
-
-  13) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示されない
+  10) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示されない
       [31mFailure/Error: expect(page).not_to have_link 'Destroy'[0m
       [31m  expected not to find visible link "Destroy", found 1 match: "Destroy"[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:238:in `block (5 levels) in <main>'[0m
 
-  14) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+  11) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
       [31mFailure/Error: expect(current_path).to eq '/books'[0m
       [31m[0m
       [31m  expected: "/books"[0m
@@ -503,7 +490,7 @@ Failures:
       [31m  (compared using ==)[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:263:in `block (4 levels) in <main>'[0m
 
-  15) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる
+  12) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる
       [31mFailure/Error: expect(current_path).to eq '/users/' + user.id.to_s[0m
       [31m[0m
       [31m  expected: "/users/2"[0m
@@ -512,25 +499,22 @@ Failures:
       [31m  (compared using ==)[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:312:in `block (4 levels) in <main>'[0m
 
-  16) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-md-〇を正しく使えている ユーザ一覧画面
+  13) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-md-〇を正しく使えている ユーザ一覧画面
       [31mFailure/Error: is_expected.to have_selector '.container .row .col-md-8.offset-md-1'[0m
       [31m  expected to find css ".container .row .col-md-8.offset-md-1" but there were no matches[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:330:in `block (3 levels) in <main>'[0m
 
-Finished in 37.22 seconds (files took 3.73 seconds to load)
-[31m199 examples, 16 failures[0m
+Finished in 32.78 seconds (files took 4.01 seconds to load)
+[31m199 examples, 13 failures[0m
 
 Failed examples:
 
-[31mrspec ./spec/system/01_before_login_spec.rb:147[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 正しく新規登録される[0m
-[31mrspec ./spec/system/01_before_login_spec.rb:150[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:157[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 bodyフォームに値が入っていない[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:160[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:171[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:184[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト application.html.erbにjavascript_pack_tagを含んでいる[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:198[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:201[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:12[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザ新規登録成功時[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:144[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:170[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:234[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない[0m
