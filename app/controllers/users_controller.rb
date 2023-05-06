@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @book = Book.new
+    @user = current_user
   end
+  
   def edit
   @user = User.find(params[:id])
   end
@@ -23,6 +25,21 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
+      render :"relationships/follower" 
+  end
+
+  def followeds
+    @user = User.find(params[:id])
+    @users = @user.followings
+      render :"relationships/follow" 
+  end
+
+
+
 
   private
 
