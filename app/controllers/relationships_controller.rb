@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :authenticate_user!
-  def cleate
+  def create
     follower = current_user.relationships.new(followed_id: params[:user_id])
     follower.save
     redirect_to request.referer || root_path
