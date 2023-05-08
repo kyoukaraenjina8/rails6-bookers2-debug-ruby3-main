@@ -17,15 +17,8 @@
           </td>
           <td><%= link_to @book.title, @book %></td>
           <td><%= @book.body %></td>
-          <td><% if @book.favorited_by?(current_user) %>
-              <%= link_to book_favorites_path(@book), method: :delete do %>
-              ♥<%= @book.favorites.count %> いいね
-              <% end %>
-              <% else %>
-              <%= link_to book_favorites_path(@book), method: :post do %>
-              ♡<%= @book.favorites.count %> いいね
-              <% end %>
-              <% end %>
+          <td class="favorite-btn">
+          <%= render 'favorites/favorite-btn',book: @book %>
           </td>
           <td>コメント件数：<%= @book.book_comments.count %></td>
           <tb> <% if @book.user_id == current_user.id %></tb>
@@ -34,24 +27,13 @@
           <tb><% end %></tb>
         </tr>
       </table>
-      <table class='table table-hover table-inverse'>
-        <tbody>
-        <tbody>
-            <% @book.book_comments.each do |book_comment| %>
-              <tr>
-                <td><%= image_tag book_comment.user.get_profile_image, size:"50x50" %></td>
-                <td><%= book_comment.user.name %></td>
-                <td><% if book_comment.user == current_user %>
-                <%= link_to "Destroy", book_book_comment_path(book_comment.book,book_comment), method: :delete, class: "btn btn-danger pull-right" %>
-                <% end %></td>
-              </tr>
-            <% end %>
-        </tbody>
-      </table>
-      <%= form_with model: [@book, @book_comment] do |f| %>
+      <div id="comments_box">
+      <%= render 'book_comments/book_comment',book:@book %>
+      <%= form_with model: [@book, @book_comment], url: book_book_comments_path(@book), local: false do |f| %>
         <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
         <%= f.submit "送信する" %>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
