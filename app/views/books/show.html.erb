@@ -8,27 +8,9 @@
     </div>
     <div class='col-md-8 offset-md-1'>
   		<h2>Book detail</h2>
-  		<table class='table'>
-  		  <tr>
-          <td><%= link_to(@book.user) do %>
-            <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
-            <%= @book.user.name %>
-            <% end %>
-          </td>
-          <td><%= link_to @book.title, @book %></td>
-          <td><%= @book.body %></td>
-          <td class="favorite-btn">
-          <%= render 'favorites/favorite-btn',book: @book %>
-          </td>
-          <td>コメント件数：<%= @book.book_comments.count %></td>
-          <tb> <% if @book.user_id == current_user.id %></tb>
-            <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
-            <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
-          <tb><% end %></tb>
-        </tr>
-      </table>
+      <%= render 'detail',book: @book %>
       <div id="comments_box">
-      <%= render 'book_comments/book_comment',book:@book %>
+      <%= render 'book_comments/book_comment',book: @book %>
       <%= form_with model: [@book, @book_comment], url: book_book_comments_path(@book), local: false do |f| %>
         <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
         <%= f.submit "送信する" %>
